@@ -1,0 +1,26 @@
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 0px;
+}
+
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+
+.h1{
+   color: var(--base); 
+}
+
+body {
+    text-align: center;
+    background: #193549;
+    color: aliceblue;
+    font-family: 'helvetica neue', sans-serif;
+}
+
+.controls {
+    margin: 50px 0;
+}

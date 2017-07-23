@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>var css</title>
+    <link rel="stylesheet" href="style.css">
+</head>   
+<body>
+    <h2>Zmienianie VAR CSS z <div class="h1">JS</div></h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">    
+        
+        <label for="spacing">Blur:</label>
+        <input type="range" name="blur" min="0" max="10" value="0" data-sizing="px">  
+        
+        <label for="base">Base color:</label>
+        <input type="color" name="base" value="#ffc600">
+    </div>   
+    
+    <img src="Felis_catus-cat_on_snow.jpg" height="50%" width="50%">
+    
+<script>
+    const inputs = document.querySelectorAll('.controls input');
+    
+    function handleUpdate() {
+        const suffix = this.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        
+        console.log(suffix);
+    }
+    
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
+
+</script>    
+    
+    
+    
+</body>
+</html>
